@@ -97,6 +97,7 @@ The name of the user needs to be changed but we need an authorization before we 
 ```
 
 ### Request Body (JSON):
+
 ```json
 {
     "firstname" : "Olu",
@@ -111,7 +112,7 @@ The name of the user needs to be changed but we need an authorization before we 
 }
 ```
 ### Response Body (JSON):
-
+```json
 {
     "firstname" : "Olu",
     "lastname" : "Tade",
@@ -123,6 +124,7 @@ The name of the user needs to be changed but we need an authorization before we 
     },
     "additionalneeds" : "Breakfast"
 }
+```json
 
 ## DELETE Request – Delete a User Booking 
 
