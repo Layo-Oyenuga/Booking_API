@@ -62,7 +62,7 @@ pm.environment.set("booking_id", jsonData.bookingid);
 pm.test("Content-Type header is present", () => {    
     pm.response.to.have.header("Content-Type");
 });
-
+```
 ## GET Request – Retrieve all Booking
 
 This is used to retrieve data from a server. I am retrieving all the bookings from the server
@@ -84,7 +84,7 @@ pm.test("Values of JSON fields", () => {
     pm.expect(jsonData.firstname).to.eql(pm.environment.get("Fname_env"));
     pm.expect(jsonData.lastname).to.eql(pm.environment.get("Lname_env"));
 });
-
+```
 ## PUT Request – Update a User Booking 
 The name of the user needs to be changed but we need an authorization before we can access this API. We also need bookingID to access this
 
