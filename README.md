@@ -55,10 +55,8 @@ Responses should be validated because we need to ensure API returns accurate dat
    pm.test("status code is 201", () => {
     pm.response.to.have.status(200);
 });
-
 var JsonDataa=JSON.parse(responseBody)
 pm.environment.set("booking_id",JsonDataa.bookingid);
-
 pm.test("content-Type header is present", () => {    
     pm.response.to.have.header("Content-Type");});
 ```
@@ -82,7 +80,6 @@ pm.test("values of json fields",()=>
 var JsonDataa=pm.response.json()
 pm.expect(JsonDataa.firstname).to.eql(pm.environment.get("Fname_env"));
 pm.expect(JsonDataa.lastname).to.eql(pm.environment.get("Lname_env"));
-
 })
 ```
 
@@ -91,6 +88,7 @@ The name of the user needs to be changed but we need an authorization before we 
 
 ``` https://restful-booker.herokuapp.com/booking/547 ```
 
+### Autentication:
 ```json
    username:"admin"
    password: "password123" 
