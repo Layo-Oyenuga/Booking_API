@@ -91,7 +91,7 @@ The name of the user needs to be changed but we need an authorization before we 
 
 ``` https://restful-booker.herokuapp.com/booking/547 ```
 
-```
+```json
    username:"admin"
    password: "password123" 
 ```
@@ -124,7 +124,7 @@ The name of the user needs to be changed but we need an authorization before we 
     },
     "additionalneeds" : "Breakfast"
 }
-```json
+```
 
 ## DELETE Request – Delete a User Booking 
 
