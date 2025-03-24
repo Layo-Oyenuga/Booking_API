@@ -1,4 +1,4 @@
-# API Testing wih herokuapp
+# API Testing with herokuapp
 
 The HerokuApp Hotel Booking Website is a test platform designed for practicing API automation and software testing. It simulates a real-world hotel booking system, allowing users to search make reservations, and manage bookings through API requests.
 This project focused on automating API testing to ensure functionality, security, and performance of the booking system.
