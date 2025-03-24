@@ -51,17 +51,18 @@ First, we need to authenticate users, as user must have an existing account befo
 ### Validation in Test Script  
 Responses should be validated because we need to ensure API returns accurate data.
 
-```json
-{
-   pm.test("status code is 201", () => {
+```javascript
+pm.test("Status code is 200", () => {
     pm.response.to.have.status(200);
 });
-var JsonDataa=JSON.parse(responseBody)
-pm.environment.set("booking_id",JsonDataa.bookingid);
-pm.test("content-Type header is present", () => {    
-    pm.response.to.have.header("Content-Type");});
-  }
-```
+
+var jsonData = JSON.parse(responseBody);
+pm.environment.set("booking_id", jsonData.bookingid);
+
+pm.test("Content-Type header is present", () => {    
+    pm.response.to.have.header("Content-Type");
+});
+
 ## GET Request – Retrieve all Booking
 
 This is used to retrieve data from a server. I am retrieving all the bookings from the server
@@ -76,16 +77,13 @@ I am retrieving the details o the user that we created through the bookingid
 ### Validation in Test Script  
 Responses should be validated because we need to assert the values of json fields
 
-```json
-{
-pm.test("values of json fields",()=>
-{
-var JsonDataa=pm.response.json()
-pm.expect(JsonDataa.firstname).to.eql(pm.environment.get("Fname_env"));
-pm.expect(JsonDataa.lastname).to.eql(pm.environment.get("Lname_env"));
-})
-  }
-```
+```javascript
+pm.test("Values of JSON fields", () => {
+    var jsonData = pm.response.json();
+    
+    pm.expect(jsonData.firstname).to.eql(pm.environment.get("Fname_env"));
+    pm.expect(jsonData.lastname).to.eql(pm.environment.get("Lname_env"));
+});
 
 ## PUT Request – Update a User Booking 
 The name of the user needs to be changed but we need an authorization before we can access this API. We also need bookingID to access this
@@ -93,10 +91,11 @@ The name of the user needs to be changed but we need an authorization before we 
 ``` https://restful-booker.herokuapp.com/booking/547 ```
 
 ### Autentication:
-```json
-{
-   username:"admin"
-   password: "password123"
+```json  
+
+ {
+   "username": "admin",
+   "password": "password123"
 }
 ```
 
